@@ -1,0 +1,84 @@
+.header {
+    grid-area: header;
+    background-color: black;
+}
+.menu {
+    grid-area: menu;
+    background-color: red;
+}
+.hero {
+    grid-area: hero;
+    background-color: lightseagreen;
+}
+.main {
+    grid-area: main;
+    background-color: brown;
+}
+.image {
+    grid-area: image;
+    background-color: plum;
+}
+.extra {
+    grid-area: extra;
+    background-color: green;
+}
+.banner {
+    grid-area: banner;
+    background-color: orange;
+}
+.container {
+    height: 100%;
+    display: grid;
+}
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS";
+    font-size: larger;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 1.5fr 2.5fr repeat(3, 2fr);
+        grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr;
+        grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 0.5fr 2.5fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "header menu menu"
+        "hero hero hero"
+        "main main image"
+        "main main extra"
+        "banner banner banner"
+    }
+}
